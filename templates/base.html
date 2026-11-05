@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="{{ lm.html }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title }}</title>
+{% if page_description %}
+<meta name="description" content="{{ page_description }}">
+{% endif %}
+{% if route == '404' %}
+<meta name="robots" content="noindex">
+{% else %}
+<link rel="canonical" href="{{ canonical }}">
+{% for code in langs %}
+<link rel="alternate" hreflang="{{ LANG_META[code].hreflang }}" href="{{ alternates[code] }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ alternates['va'] }}">
+<meta property="og:type" content="{{ og_type }}">
+<meta property="og:site_name" content="{{ site.studio_name }}">
+<meta property="og:title" content="{{ page_title }}">
+{% if page_description %}
+<meta property="og:description" content="{{ page_description }}">
+{% endif %}
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:locale" content="{{ lm.og }}">
+{% if og_image %}
+<meta property="og:image" content="{{ og_image }}">
+{% endif %}
+<meta name="twitter:card" content="{{ 'summary_large_image' if og_image else 'summary' }}">
+{% endif %}
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/style.css?v={{ assets_v }}">
+<script>document.documentElement.classList.add('js')</script>
+{% if jsonld %}
+<script type="application/ld+json">{{ jsonld }}</script>
+{% endif %}
+</head>
+<body class="{{ body_class }}">
+<a class="skip-link" href="#main">{{ t('skip') }}</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ url('home') }}" aria-label="{{ site.studio_name }}">
+      {% include "_logo.html" %}
+      {% if brand_sub %}<span class="brand-sub" aria-hidden="true">{{ brand_sub }}</span>{% endif %}
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      <span class="sr-only">{{ t('menu') }}</span><span class="menu-icon" aria-hidden="true"></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="{{ t('menu') }}">
+      <ul class="nav-list">
+        {% for item in nav %}
+        <li><a href="{{ item.url }}"{% if item.route == route or (route == 'project' and item.route == 'projects') %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+      <ul class="lang-switch" aria-label="{{ t('lang_label') }}">
+        {% for code in langs %}
+        <li><a href="{{ paths[code] }}" hreflang="{{ LANG_META[code].hreflang }}" lang="{{ LANG_META[code].html }}"{% if code == lang %} aria-current="true"{% endif %}><span aria-hidden="true">{{ LANG_META[code].short }}</span><span class="sr-only">{{ LANG_META[code].label }}</span></a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© {{ year }} {{ site.studio_name }}</p>
+    <ul class="footer-links">
+      {% if site.email %}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+      {% if site.instagram %}<li><a href="{{ site.instagram }}" rel="me noopener" target="_blank">Instagram</a></li>{% endif %}
+      {% if has_legal %}<li><a href="{{ url('legal') }}">{{ t('legal') }}</a></li>{% endif %}
+    </ul>
+  </div>
+</footer>
+
+<script src="/js/main.js?v={{ assets_v }}" defer></script>
+</body>
+</html>

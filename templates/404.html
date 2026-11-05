@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap page-head">
+  <h1 class="page-title">404</h1>
+</section>
+<section class="wrap section-tight notfound">
+  {% for code in langs %}
+  <p lang="{{ LANG_META[code].html }}"><a class="link-arrow" href="{{ paths[code] }}">{{ T['not_found'][code] }} · {{ T['back_home'][code] }} →</a></p>
+  {% endfor %}
+</section>
+{% endblock %}

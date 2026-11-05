@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="project">
+  <header class="wrap project-head">
+    <p class="eyebrow"><a href="{{ url('projects') }}">← {{ t('back_projects') }}</a></p>
+    <h1 class="project-title">{{ p.title }}</h1>
+    {% if summary %}<p class="project-summary">{{ summary }}</p>{% endif %}
+    <dl class="project-meta">
+      {% if p.category %}<div><dt>{{ t('category') }}</dt><dd>{{ cat_name(p.category) }}</dd></div>{% endif %}
+      {% if p.year %}<div><dt>{{ t('year') }}</dt><dd>{{ p.year }}</dd></div>{% endif %}
+      {% if p.client %}<div><dt>{{ t('client') }}</dt><dd>{{ p.client }}</dd></div>{% endif %}
+    </dl>
+  </header>
+
+  {% if p.cover %}
+  <figure class="wrap project-cover">
+    {{ img(p.cover, sizes='100vw', alt=p.title, eager=True) }}
+  </figure>
+  {% endif %}
+
+  {% if blocks %}
+  <div class="wrap project-blocks">
+    {% for label, text in blocks %}
+    <section class="project-block">
+      <h2 class="block-label">{{ label }}</h2>
+      <div class="prose">{{ text|paragraphs }}</div>
+    </section>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if p.gallery %}
+  <section class="wrap gallery" aria-label="{{ t('gallery') }}">
+    {% for g in p.gallery %}
+    <figure class="gallery-item gallery-{{ g.layout }}">
+      {{ img(g.image, sizes=('(min-width: 700px) 50vw, 100vw' if g.layout == 'half' else '100vw'), alt=(g.alt or p.title)) }}
+    </figure>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if prev_p and next_p %}
+  <nav class="wrap project-nav" aria-label="{{ t('project_nav') }}">
+    <a class="project-nav-link" href="{{ url('project', prev_p.slug) }}" rel="prev">
+      <span class="eyebrow">← {{ t('prev') }}</span>
+      <span class="project-nav-title">{{ prev_p.title }}</span>
+    </a>
+    <a class="project-nav-link project-nav-next" href="{{ url('project', next_p.slug) }}" rel="next">
+      <span class="eyebrow">{{ t('next') }} →</span>
+      <span class="project-nav-title">{{ next_p.title }}</span>
+    </a>
+  </nav>
+  {% endif %}
+</article>
+{% endblock %}

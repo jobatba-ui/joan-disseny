@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap page-head">
+  <h1 class="page-title">{{ t('nav_contact') }}</h1>
+  <p class="lead">{{ t('contact_intro') }}</p>
+</section>
+
+<section class="wrap section-tight contact-grid">
+  <div class="contact-info">
+    <h2 class="block-label">{{ t('contact_direct') }}</h2>
+    <ul class="contact-list">
+      {% if site.email %}<li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>{% endif %}
+      {% if site.instagram %}<li><a href="{{ site.instagram }}" rel="me noopener" target="_blank">Instagram ↗</a></li>{% endif %}
+      {% if site.location %}<li>{{ site.location }}</li>{% endif %}
+    </ul>
+  </div>
+
+  {% if site.form_key %}
+  <div class="contact-form">
+    <h2 class="block-label">{{ t('form_title') }}</h2>
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST"
+          data-msg-sending="{{ t('form_sending') }}" data-msg-ok="{{ t('form_ok') }}" data-msg-err="{{ t('form_err') }}">
+      <input type="hidden" name="access_key" value="{{ site.form_key }}">
+      <input type="hidden" name="subject" value="Nuevo mensaje desde la web de {{ site.studio_name }}">
+      <input type="hidden" name="from_name" value="Web {{ site.studio_name }}">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field">
+        <label for="f-name">{{ t('form_name') }}</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="f-email">{{ t('form_email') }}</label>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="f-message">{{ t('form_message') }}</label>
+        <textarea id="f-message" name="message" rows="6" required></textarea>
+      </div>
+      <label class="consent">
+        <input type="checkbox" name="consent" required>
+        <span>{{ t('consent') }}{% if has_legal %} <a href="{{ url('legal') }}">{{ t('privacy_link') }}</a>{% endif %}</span>
+      </label>
+      <button class="btn" type="submit">{{ t('form_send') }}</button>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+  {% endif %}
+</section>
+{% endblock %}

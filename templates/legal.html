@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap page-head">
+  <h1 class="page-title">{{ t('legal') }}</h1>
+</section>
+<section class="wrap section-tight">
+  <div class="prose prose-narrow">{{ legal|paragraphs }}</div>
+</section>
+{% endblock %}

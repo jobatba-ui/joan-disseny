@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap page-head">
+  <h1 class="page-title">{{ t('nav_projects') }}</h1>
+</section>
+
+{% if projects %}
+  {% if categories|length > 1 %}
+  <div class="wrap">
+    <nav class="filters" aria-label="{{ t('filter_label') }}" data-filters>
+      <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">{{ t('filter_all') }}</button>
+      {% for c in categories %}
+      <button type="button" class="filter-btn" data-filter="{{ c }}" aria-pressed="false">{{ cat_name(c) }}</button>
+      {% endfor %}
+    </nav>
+  </div>
+  {% endif %}
+  <section class="wrap section-tight">
+    <div class="grid grid-projects" data-grid>
+      {% for p in projects %}
+      {% set idx = loop.index0 %}
+      {% include "_card.html" %}
+      {% endfor %}
+    </div>
+  </section>
+{% else %}
+  <p class="wrap empty">{{ t('empty_projects') }}</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap page-head">
+  <h1 class="page-title">{{ t('nav_about') }}</h1>
+</section>
+<section class="wrap section-tight about">
+  {% if portrait %}
+  <figure class="about-portrait">{{ img(portrait, sizes='(min-width: 900px) 33vw, 100vw', alt='', eager=True) }}</figure>
+  {% endif %}
+  <div class="about-text">
+    {% if intro %}<div class="prose prose-lead">{{ intro|paragraphs }}</div>{% endif %}
+    {% if philosophy %}
+    <section class="about-block">
+      <h2 class="block-label">{{ t('philosophy') }}</h2>
+      <div class="prose">{{ philosophy|paragraphs }}</div>
+    </section>
+    {% endif %}
+    {% if specialities %}
+    <section class="about-block">
+      <h2 class="block-label">{{ t('specialities') }}</h2>
+      <ul class="tags">
+        {% for s in specialities %}<li>{{ s }}</li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,9 @@
+<article class="card{% if idx is odd and not featured_layout %} offset{% endif %}" data-category="{{ p.category }}">
+  <a class="card-link" href="{{ url('project', p.slug) }}">
+    <div class="card-media">{{ img(p.cover, sizes=card_sizes|default('(min-width: 700px) 50vw, 100vw'), alt='') }}</div>
+    <div class="card-meta">
+      <h3 class="card-title">{{ p.title }}</h3>
+      <p class="card-info">{% if p.category %}{{ cat_name(p.category) }}{% endif %}{% if p.category and p.year %} · {% endif %}{{ p.year }}</p>
+    </div>
+  </a>
+</article>

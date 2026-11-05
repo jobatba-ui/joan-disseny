@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-inner">
+    <h1 class="hero-title">
+      <span class="sr-only">{{ site.studio_name }}</span>
+      <span class="hero-logo" aria-hidden="true">{% include "_logo.html" %}</span>
+      {% if brand_sub %}<span class="hero-sub" aria-hidden="true">{{ brand_sub }}</span>{% endif %}
+    </h1>
+    {% if tagline %}<p class="hero-tagline">{{ tagline }}</p>{% endif %}
+  </div>
+</section>
+
+{% if featured %}
+<section class="wrap section" aria-labelledby="featured-title">
+  <header class="section-head">
+    <h2 id="featured-title" class="section-title">{{ t('featured') }}</h2>
+    <a class="link-arrow" href="{{ url('projects') }}">{{ t('see_all') }} →</a>
+  </header>
+  <div class="grid grid-featured">
+    {% set featured_layout = true %}
+    {% for p in featured %}
+    {% set idx = loop.index0 %}
+    {% set card_sizes = '(min-width: 700px) 100vw, 100vw' if loop.first else '(min-width: 700px) 50vw, 100vw' %}
+    {% include "_card.html" %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

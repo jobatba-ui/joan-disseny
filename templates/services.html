@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap page-head">
+  <h1 class="page-title">{{ t('nav_services') }}</h1>
+</section>
+<section class="wrap section-tight">
+  <ol class="services">
+    {% for s in items %}
+    <li class="service">
+      <span class="service-num" aria-hidden="true">{{ '%02d' % loop.index }}</span>
+      <h2 class="service-title">{{ s.title }}</h2>
+      <div class="service-body">
+        <div class="prose">{{ s.description|paragraphs }}</div>
+        {% if s.category %}<p><a class="link-arrow" href="{{ url('projects') }}#{{ s.category }}">{{ t('see_projects') }} →</a></p>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endblock %}
