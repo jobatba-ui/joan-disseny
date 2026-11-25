@@ -1,0 +1,33 @@
+{
+  "title": "LA JOVE",
+  "published": true,
+  "category": "identidad",
+  "cover": "/uploads/bandeta-09.png",
+  "description": {
+    "va": "La JOVE. Una identitat pròpia per a una nova generació de músics.\n\nNaix la nova identitat visual de la Banda Jove de la Unió Musical Benicadell, un projecte que busca donar veu, presència i protagonisme a la banda de l’escola de música.\n\nUna identitat gràfica pensada per a reforçar la seua personalitat, posar en valor el talent de les noves generacions i consolidar el seu lloc dins de la societat musical.\n\nUna marca que representa joventut, música i futur. Perquè La JOVE no és només una banda, és una nova manera de viure i fer sonar la música.\n\nPreparats per fer sonar La JOVE?",
+    "es": "La JOVE. Una identidad propia para una nueva generación de músicos.\n\nNace la nueva identidad visual de la Banda Jove de la Unió Musical Benicadell, un proyecto que busca dar voz, presencia y protagonismo a la banda de la escuela de música.\n\nUna identidad gráfica pensada para reforzar su personalidad, poner en valor el talento de las nuevas generaciones y consolidar su lugar dentro de la sociedad musical.\n\nUna marca que representa juventud, música y futuro. Porque La JOVE no es solo una banda, es una nueva forma de vivir y hacer sonar la música.\n\n¿Preparados para hacer sonar La JOVE?",
+    "en": "La JOVE. A unique identity for a new generation of musicians.\n\nThe new visual identity of the Banda Jove de la Unió Musical Benicadell is born. A project aimed at giving the music school's band a stronger voice, greater visibility and a more prominent role.\n\nA visual identity designed to strengthen its personality, celebrate the talent of new generations and establish its place within the musical community.\n\nA brand that represents youth, music and the future. Because La JOVE is more than just a band; it's a new way of experiencing and making music.\n\nAre you ready to hear La JOVE?"
+  },
+  "gallery": [
+    {
+      "layout": "full",
+      "image": "/uploads/bandeta-10.png"
+    },
+    {
+      "layout": "half",
+      "image": "/uploads/bandeta-14.png"
+    },
+    {
+      "layout": "half",
+      "image": "/uploads/bandeta_mesa-de-trabajo-1-copia-4.png"
+    },
+    {
+      "layout": "full",
+      "image": "/uploads/bandeta-11.png"
+    },
+    {
+      "layout": "full",
+      "image": "/uploads/bandeta-20.png"
+    }
+  ]
+}
