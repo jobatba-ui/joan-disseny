@@ -1,0 +1,38 @@
+{
+  "title": "CANABACH",
+  "published": true,
+  "category": "branding",
+  "year": "2026",
+  "cover": "/uploads/07_26_canabach-02.png",
+  "summary": {
+    "va": "Un Iloc on la música es troba amb la natura, on els dies s’allarguen i on cada moment es converteix en un record.\n\nUna identitat pròpia, vibrant, Iliure i sense artificis. Una combinació de música, muntanya, amistat i bona energia que dona forma a una experiència diferent. Es tracta de compartir, descobrir i formar part d’alguna cosa.\n\nCANABACH.\nESTD 2026.",
+    "es": "Un lugar donde la música se encuentra con la naturaleza, donde los días se alargan y donde cada momento se convierte en un recuerdo.\n\nUna identidad propia, vibrante, libre y sin artificios. Una combinación de música, montaña, amistad y buena energía que da forma a una experiencia diferente. Se trata de compartir, descubrir y formar parte de algo.\n\nCANABACH.\nESTD 2026.",
+    "en": "A place where music meets nature, where the days grow longer and every moment becomes a memory.\n\nA unique identity, vibrant, free and unfiltered. A combination of music, mountains, friendship and good energy that creates a different kind of experience. It’s all about sharing, discovering and being part of something.\n\nCANABACH.\nESTD 2026."
+  },
+  "gallery": [
+    {
+      "layout": "full",
+      "image": "/uploads/07_26_canabach-03.png"
+    },
+    {
+      "layout": "half",
+      "image": "/uploads/07_26_canabach-07.png"
+    },
+    {
+      "layout": "half",
+      "image": "/uploads/07_26_canabach-08.png"
+    },
+    {
+      "layout": "full",
+      "image": "/uploads/07_26_canabach-01.png"
+    },
+    {
+      "layout": "half",
+      "image": "/uploads/07_26_canabach-09.png"
+    },
+    {
+      "layout": "half",
+      "image": "/uploads/07_26_canabach-05.png"
+    }
+  ]
+}
