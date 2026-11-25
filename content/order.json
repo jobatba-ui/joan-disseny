@@ -1,1 +1,6 @@
-{ "projects": [] }
+{
+  "projects": [
+    "canabach",
+    "el-forn"
+  ]
+}
