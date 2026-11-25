@@ -1,0 +1,31 @@
+{
+  "title": "EL FORN ",
+  "published": true,
+  "category": "identidad",
+  "year": "2025",
+  "client": "",
+  "cover": "/uploads/elforn-02.png",
+  "context": {
+    "va": "Una tasca amb personalitat. Una nova generació per conquistar.\n\nEl Forn naix amb una idea clara: recuperar l’esperit de les tavernes de sempre i portar-lo a un públic més jove.\n\nTardeos, música, gastronomia i events en un espai amb identitat pròpia.\n\nUna marca que mescla tradició + actitud + cultura de carrer, convertint El Forn en molt més que una tasca.\n\nEl Forn. On comença el tardeo. 🔥",
+    "es": "Un local con personalidad. Una nueva generación por conquistar.\n\nEl Forn nace con una idea clara: recuperar el espíritu de las tabernas de siempre y llevarlo a un público más joven.\n\nTardeos, música, gastronomía y eventos en un espacio con identidad propia.\n\nUna marca que mezcla tradición + actitud + cultura urbana, convirtiendo El Forn en mucho más que una taberna.\n\nEl Forn. Donde empieza el tardeo. 🔥",
+    "en": "A bar with personality. A new generation to win over.\n\nEl Forn was born with a clear vision: to bring back the spirit of traditional taverns and give it a fresh twist for a younger audience.\n\nAfternoon parties, music, food and events in a space with its own unique identity.\n\nA brand that blends tradition + attitude + street culture, turning El Forn into much more than just a tavern.\n\nEl Forn. Where the afternoon comes alive. 🔥"
+  },
+  "gallery": [
+    {
+      "layout": "full",
+      "image": "/uploads/elforn-01.png"
+    },
+    {
+      "layout": "full",
+      "image": "/uploads/elforn-06.png"
+    },
+    {
+      "layout": "full",
+      "image": "/uploads/elforn-07.png"
+    },
+    {
+      "layout": "full",
+      "image": "/uploads/elforn-05.png"
+    }
+  ]
+}
